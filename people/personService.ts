@@ -1,6 +1,6 @@
 import { AppHttp } from "../core/appHttp";
 import { Cache } from "../core/cache";
-import { countryHelper } from "./countryHelper";
+import { CountryHelper } from "./countryHelper";
 import { ICountryData, IPerson, Person } from "./person";
 import {countryApiUrl} from '../config/config.json'
 
@@ -28,9 +28,9 @@ export class PersonService {
 
         const output: ICountryData = {
             timeZone: country['timezones'],
-            currency: countryHelper.getCurrency(country.currencies),
-            fullName: countryHelper.getCounryFullName(country.name),
-            language: countryHelper.getLanguage(country.languages),
+            currency: CountryHelper.getCurrency(country.currencies),
+            fullName: CountryHelper.getCounryFullName(country.name),
+            language: CountryHelper.getLanguage(country.languages),
             region: country.region
         };
 

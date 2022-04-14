@@ -13,7 +13,7 @@ export interface IPerson {
 export interface ICountryData {
   fullName: { common: string, official: string };
   currency: { code: string, name: string, symbol: string };
-  language: string;
+  language: string[];
   timeZone: string[];
   region: string;
 }
@@ -36,7 +36,7 @@ export class Person {
 
     countryData["fullName"] = this.personData.countryData.fullName;
     countryData["currency"] = this.personData.countryData.currency;
-    countryData["language"] = this.personData.countryData.language;
+    countryData["languages"] = this.personData.countryData.language;
     countryData["timeZone"] = this.personData.countryData.timeZone;
     data["countryData"] = countryData;
     if (this.isFromASpecialRegion()) {
