@@ -30,10 +30,10 @@ describe("PeopleAPI", () => {
                 chai.expect(res.status).to.equal(200);
             })
         });
-        
+
         it("Should return array data", async () => {
             return chai.request(app).get("/people").send().then(res => {
-               chai.expect(res.body).to.be.an('array')
+                chai.expect(res.body).to.be.an('array')
             })
         });
 
