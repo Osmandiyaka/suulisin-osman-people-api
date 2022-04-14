@@ -1,4 +1,4 @@
-import { SPECIAL_REGIONS } from './specialRegions';
+import {sepcialRegion} from '../config/config.json'
 
 export interface IPerson {
   firstName: string;
@@ -47,7 +47,7 @@ export class Person {
   }
 
   private isFromASpecialRegion(): boolean {
-    return SPECIAL_REGIONS.includes(this.region);
+    return sepcialRegion.includes(this.region);
   }
 
   private escapeRegExp(string) {

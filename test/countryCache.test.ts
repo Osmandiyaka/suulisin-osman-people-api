@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import 'mocha';
-import { CountryCache } from '../countryCache';
-import { ICountryData } from '../person';
+import { Cache } from '../core/cache';
+import { ICountryData } from '../people/person';
  
-let cache:CountryCache;
+let cache:Cache;
 let countryData:ICountryData;
 beforeEach(() => {
-    cache=new CountryCache();
+    cache=new Cache();
     countryData={
         currency:{code:'dollar',name:'Us Dollar',symbol:'$'},
         fullName:{common:'Usa',official:'United states of America'},

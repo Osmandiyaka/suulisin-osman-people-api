@@ -1,0 +1,4 @@
+{
+    "countryApiUrl":"https://restcountries.com/v3.1/alpha",
+    "sepcialRegion":["Europe","Asia"]
+}

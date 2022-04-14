@@ -1,11 +1,13 @@
-import { AppHttp } from "./appHttp";
-import { CountryCache } from "./countryCache";
+import { AppHttp } from "../core/appHttp";
+import { Cache } from "../core/cache";
 import { countryHelper } from "./countryHelper";
 import { ICountryData, IPerson, Person } from "./person";
+import {countryApiUrl} from '../config/config.json'
+
 
 export class PersonService {
 
-    constructor(private http: AppHttp, private countryCache: CountryCache) {
+    constructor(private http: AppHttp, private cache: Cache) {
 
     }
 
@@ -18,10 +20,10 @@ export class PersonService {
     }
 
     private async getCountryDataByCode(countryCode: string): Promise<ICountryData> {
-        if (this.countryCache.exist(countryCode))
-            return this.countryCache.get(countryCode);
+        if (this.cache.exist(countryCode))
+            return this.cache.get(countryCode);
 
-        const countryData = await this.http.get(`https://restcountries.com/v3.1/alpha/${countryCode}`);
+        const countryData = await this.http.get(`${countryApiUrl}/${countryCode}`);
         const country = countryData.data[0];
 
         const output: ICountryData = {
@@ -32,7 +34,7 @@ export class PersonService {
             region: country.region
         };
 
-        this.countryCache.add(countryCode, output);
+        this.cache.add(countryCode, output);
 
         return output;
 
