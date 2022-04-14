@@ -29,7 +29,7 @@ export class PersonService {
         const output: ICountryData = {
             timeZone: country['timezones'],
             currency: CountryHelper.getCurrency(country.currencies),
-            fullName: CountryHelper.getCounryFullName(country.name),
+            fullName: CountryHelper.getCountryFullName(country.name),
             language: CountryHelper.getLanguage(country.languages),
             region: country.region
         };

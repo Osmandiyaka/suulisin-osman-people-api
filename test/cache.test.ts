@@ -10,7 +10,7 @@ beforeEach(() => {
     countryData={
         currency:{code:'dollar',name:'Us Dollar',symbol:'$'},
         fullName:{common:'Usa',official:'United states of America'},
-        language:'English',
+        language:['English'],
         region:'North America',
         timeZone:['+2','+3']
     }

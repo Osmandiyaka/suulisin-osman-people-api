@@ -2,7 +2,7 @@ import { PeopleApiException } from "../core/applicationException";
 
 export class CountryHelper {
 
-    public static getCounryFullName(nameComponent: any): { common: string; official: string; } {
+    public static getCountryFullName(nameComponent: any): { common: string; official: string; } {
         this.throwIfNull(nameComponent, 'Name component cannot be null in country object');
         this.throwIfKeysAreMissing(nameComponent, ['common', 'official'], 'Name component should have [common] and [official] keys');
 
@@ -43,7 +43,7 @@ export class CountryHelper {
         )
     }
 
-    private static hasKey(obj, prop) {
+    private static hasKey(obj, prop) :boolean{
         if (typeof obj === 'object' && obj !== null) {
             if (obj.hasOwnProperty(prop)) {
                 return true;
