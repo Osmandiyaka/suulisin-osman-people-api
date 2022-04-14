@@ -21,3 +21,4 @@ app.listen(port, () => {
 
 app.get('/people', (req, res) => personController.getPeople(req, res));
 
+export default app;
