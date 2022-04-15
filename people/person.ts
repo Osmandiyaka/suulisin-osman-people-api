@@ -37,7 +37,7 @@ export class Person {
     countryData["fullName"] = this.personData.countryData.fullName;
     countryData["currency"] = this.personData.countryData.currency;
     countryData["languages"] = this.personData.countryData.language;
-    countryData["timeZone"] = this.personData.countryData.timeZone;
+    countryData["timeZones"] = this.personData.countryData.timeZone;
     data["countryData"] = countryData;
     if (this.isFromASpecialRegion()) {
       data['extra'] = `${this.personData.firstName}${this.personData.lastName}${this.replaceAll(this.personData.dateOfBirth, '/', '')}`;
