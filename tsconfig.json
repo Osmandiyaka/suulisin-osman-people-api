@@ -6,6 +6,7 @@
       "rootDir": "./",
       "esModuleInterop": true,
       "resolveJsonModule": true,
+      "outDir": "./dist",
     },
     
   }
