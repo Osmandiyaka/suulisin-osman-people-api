@@ -37,5 +37,11 @@ describe("PeopleAPI", () => {
             })
         });
 
+        it("Should return array data with multiple records", async () => {
+            return chai.request(app).get("/people").send().then(res => {
+                chai.expect(res.body.length).to.be.greaterThan(0);
+            })
+        });
+
     });
 });
