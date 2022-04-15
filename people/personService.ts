@@ -14,8 +14,7 @@ export class PersonService {
 
     public async getPersonData(person: any): Promise<Person> {
         const countryData = await this.getCountryDataByCode(person.country);
-        const { firstName, lastName, dateOfBirth, jobTitle, company } = person;
-        const personData: IPerson = { countryData: countryData, firstName, lastName, dateOfBirth, jobTitle, company };
+        const personData: IPerson = { countryData: countryData, ...person };
         return new Person(personData, countryData.region);
     }
 
