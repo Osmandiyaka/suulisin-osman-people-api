@@ -105,7 +105,7 @@ describe('People service', () => {
             });
 
             let countryData = person.toJSON()['countryData'];
-            expect(countryData['timeZone']).to.eql(["UTC-12:00",
+            expect(countryData['timeZones']).to.eql(["UTC-12:00",
                 "UTC-11:00",
                 "UTC-10:00",
                 "UTC-09:00",
